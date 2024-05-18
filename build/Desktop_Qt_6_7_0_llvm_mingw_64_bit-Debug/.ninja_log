@@ -1,0 +1,17 @@
+# ninja log v5
+96	3700	7377671612243901	BiblSearch_autogen/timestamp	6deb503159abca89
+96	3700	7377671612243901	BiblSearch_autogen/mocs_compilation.cpp	6deb503159abca89
+96	3700	7377671612243901	C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/timestamp	6deb503159abca89
+96	3700	7377671612243901	C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/mocs_compilation.cpp	6deb503159abca89
+1129	5985	7377636467434033	CMakeFiles/BiblSearch.dir/main.cpp.obj	b55acdff6c3ff457
+1122	5987	7377636467853337	CMakeFiles/BiblSearch.dir/BiblSearch_autogen/mocs_compilation.cpp.obj	62c13bf6a3b85a07
+6186	6794	7377636476014418	BiblSearch.exe	74f9172228a26409
+1125	6185	7377636469885998	CMakeFiles/BiblSearch.dir/mainwindow.cpp.obj	7ec97771195922ec
+39	1900	7377693548496263	BiblSearch_autogen/timestamp	6deb503159abca89
+39	1900	7377693548496263	BiblSearch_autogen/mocs_compilation.cpp	6deb503159abca89
+39	1900	7377693548496263	C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/timestamp	6deb503159abca89
+39	1900	7377693548496263	C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/mocs_compilation.cpp	6deb503159abca89
+1902	14844	7377693678314564	CMakeFiles/BiblSearch.dir/BiblSearch_autogen/mocs_compilation.cpp.obj	827121abde025493
+1905	14845	7377693678314564	CMakeFiles/BiblSearch.dir/main.cpp.obj	a69ea5ba68ca4187
+1909	15513	7377693685042134	CMakeFiles/BiblSearch.dir/mainwindow.cpp.obj	dde45ae5bc375b44
+15513	17725	7377693707102034	BiblSearch.exe	74f9172228a26409
