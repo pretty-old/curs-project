@@ -1,10 +1,9 @@
-C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/30823/Documents/BiblSearch/mainwindow.h \
+C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/EWIEGA46WW/moc_loginwindow.cpp: C:/Users/30823/Documents/BiblSearch/loginwindow.h \
   C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/moc_predefs.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/q23utility.h \
-  C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qarraydata.h \
@@ -120,7 +119,6 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qyieldcpu.h \
-  C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/QStandardItemModel \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qbrush.h \
@@ -142,7 +140,6 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qrgba64.h \
-  C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qstandarditemmodel.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qtextcursor.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qtextdocument.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qtextformat.h \
@@ -153,18 +150,21 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/QLineEdit \
-  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qframe.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qlabel.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qlineedit.h \
-  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qsizepolicy.h \
-  C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtWidgets/qtwidgetsglobal.h \

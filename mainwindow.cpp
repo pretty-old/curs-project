@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QJsonArray>
+#include <QGridLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,8 +18,36 @@ MainWindow::MainWindow(QWidget *parent)
     // Изменяем методы setModel для QTableView
     ui->bookTableView->setModel(bookModel);
     ui->userTableView->setModel(userModel);
+
+    // Создаем UI-элементы для входа
+    usernameLineEdit = new QLineEdit;
+    passwordLineEdit = new QLineEdit;
+    passwordLineEdit->setEchoMode(QLineEdit::Password);
+    loginButton = new QPushButton("Войти");
+    loginStatusLabel = new QLabel(""); // Надпись для статуса входа
+    loginStatusLabel->setStyleSheet("color: green;"); // Зеленый цвет для успешного входа
+
+    // Создаем QGridLayout для размещения UI-элементов
+    QGridLayout *loginLayout = new QGridLayout;
+    loginLayout->addWidget(new QLabel("Имя пользователя:"), 0, 0);
+    loginLayout->addWidget(usernameLineEdit, 0, 1);
+    loginLayout->addWidget(new QLabel("Пароль:"), 1, 0);
+    loginLayout->addWidget(passwordLineEdit, 1, 1);
+    loginLayout->addWidget(loginButton, 2, 0, 1, 2);
+    loginLayout->addWidget(loginStatusLabel, 3, 0, 1, 2);
+
+    // Добавляем layout в mainWindow
+    QWidget *loginWidget = new QWidget;
+    loginWidget->setLayout(loginLayout);
+    ui->verticalLayout->addWidget(loginWidget);
+
+    // Устанавливаем начальное состояние элементов
+    setElementsEnabled(false); // Все элементы не активны
     loadBooks();
     loadUsers();
+
+    // Подключаем сигнал к слоту
+    connect(loginButton, &QPushButton::clicked, this, &MainWindow::on_loginButton_clicked);
 }
 
 MainWindow::~MainWindow()
@@ -36,7 +65,7 @@ void MainWindow::on_addBookButton_clicked()
             QString genre = QInputDialog::getText(this, "Добавить книгу", "Жанр:", QLineEdit::Normal, "", &ok);
             if (ok && !genre.isEmpty()) {
                 bool isOk;
-                int yearPublished = QInputDialog::getInt(this, "Добавить книгу", "Год издания:", 1900, 2024, 1, isOk); // Удалили &
+                int yearPublished = QInputDialog::getInt(this, "Добавить книгу", "Год издания:", 1900, 2024, 1, isOk);
                 if (isOk) {
                     // Проверяем, является ли пользователь администратором
                     int userRow = ui->userTableView->currentIndex().row();
@@ -72,7 +101,7 @@ void MainWindow::on_editBookButton_clicked()
                 QString newGenre = QInputDialog::getText(this, "Редактировать книгу", "Жанр:", QLineEdit::Normal, genre, &ok);
                 if (ok && !newGenre.isEmpty()) {
                     bool isOk;
-                    int newYearPublished = QInputDialog::getInt(this, "Редактировать книгу", "Год издания:", 1900, 2024, 1, isOk); // Удалили &
+                    int newYearPublished = QInputDialog::getInt(this, "Редактировать книгу", "Год издания:", 1900, 2024, 1, isOk);
                     if (isOk) {
                         editBook(row, newTitle, newAuthor, newGenre, newYearPublished, available);
                         saveBooks();
@@ -272,6 +301,7 @@ void MainWindow::saveUsers()
     QFile file("users.json");
     if (file.open(QIODevice::WriteOnly)) {
         QJsonArray jsonArray;
+        // Исправляем ошибку: создаем jsonArray из userModel
         for (int i = 0; i < userModel->rowCount(); i++) {
             QJsonObject userObject;
             userObject.insert("username", userModel->item(i, 0)->text());
@@ -387,4 +417,73 @@ void MainWindow::generateReport()
 {
     // Реализуйте генерацию отчета
     QMessageBox::information(this, "Отчет", "Отчет пока не реализован!");
+}
+
+// Слот для получения сигнала об успешном входе
+void MainWindow::onLoginSuccess(const QString& username)
+{
+    // Загружаем данные из JSON-файлов (если нужно)
+    loadBooks();
+    loadUsers();
+
+    // Покажем основное окно (MainWindow)
+    show();
+
+    // Закрываем окно входа
+    // LoginWindow *loginWindow = qobject_cast<LoginWindow*>(sender());
+    // if (loginWindow) {
+    //     loginWindow->close();
+    // }
+}
+
+void MainWindow::on_loginButton_clicked()
+{
+    QString username = usernameLineEdit->text();
+    QString password = passwordLineEdit->text();
+
+    if (validateLogin(username, password)) {
+        loginStatusLabel->setText("Вход успешен!");
+        setElementsEnabled(true); // Все элементы активны
+    } else {
+        loginStatusLabel->setText("Неверные данные. Попробуйте еще раз.");
+    }
+}
+
+bool MainWindow::validateLogin(const QString& username, const QString& password)
+{
+    QFile file("users.json"); // Открываем файл users.json
+    if (file.open(QIODevice::ReadOnly)) {
+        QByteArray data = file.readAll();
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
+        if (jsonDoc.isArray()) {
+            QJsonArray jsonArray = jsonDoc.array();
+            for (int i = 0; i < jsonArray.size(); i++) {
+                QJsonObject userObject = jsonArray.at(i).toObject();
+                QString storedUsername = userObject.value("username").toString();
+                QString storedPassword = userObject.value("password").toString();
+
+                if (storedUsername == username && storedPassword == password) {
+                    file.close();
+                    return true; // Пользователь найден, пароль верный
+                }
+            }
+        }
+        file.close();
+    }
+    return false; // Пользователь не найден или пароль неверный
+}
+
+void MainWindow::setElementsEnabled(bool enabled)
+{
+    ui->addBookButton->setEnabled(enabled);
+    ui->editBookButton->setEnabled(enabled);
+    ui->deleteBookButton->setEnabled(enabled);
+    ui->addUserButton->setEnabled(enabled);
+    ui->editUserButton->setEnabled(enabled);
+    ui->deleteUserButton->setEnabled(enabled);
+    ui->issueBookButton->setEnabled(enabled);
+    ui->returnBookButton->setEnabled(enabled);
+    ui->generateReportButton->setEnabled(enabled);
+    ui->bookTableView->setEnabled(enabled);
+    ui->userTableView->setEnabled(enabled);
 }

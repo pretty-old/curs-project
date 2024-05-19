@@ -80,13 +80,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 56,
+				"line" : 58,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 42,
+				"line" : 44,
 				"parent" : 0
 			},
 			{
@@ -316,7 +316,7 @@
 			{
 				"command" : 13,
 				"file" : 1,
-				"line" : 40,
+				"line" : 42,
 				"parent" : 0
 			}
 		]
@@ -442,11 +442,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "BiblSearch_autogen::@6890427a1f51a3e7e1df"
+			"id" : "BiblSearch_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "BiblSearch_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "BiblSearch_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "BiblSearch::@6890427a1f51a3e7e1df",

@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QStandardItemModel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QLabel> // Добавлен заголовок для QLabel
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,11 +31,18 @@ private slots:
     void on_issueBookButton_clicked();
     void on_returnBookButton_clicked();
     void on_generateReportButton_clicked();
+    void on_loginButton_clicked(); // Добавлен слот для кнопки входа
+    void onLoginSuccess(const QString& username); // Добавлен слот для сигнала
 
 private:
     Ui::MainWindow *ui;
     QStandardItemModel *bookModel;
     QStandardItemModel *userModel;
+
+    QLineEdit *usernameLineEdit;
+    QLineEdit *passwordLineEdit;
+    QPushButton *loginButton;
+    QLabel *loginStatusLabel; // Добавлен QLabel для статуса входа
 
     void loadBooks();
     void loadUsers();
@@ -49,6 +59,9 @@ private:
     void issueBook(int userRow, int bookRow);
     void returnBook(int userRow, int bookRow);
     void generateReport();
+
+    bool validateLogin(const QString& username, const QString& password);
+    void setElementsEnabled(bool enabled);
 };
 
 #endif // MAINWINDOW_H
