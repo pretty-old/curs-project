@@ -8,5 +8,20 @@
         "password": "1234",
         "userType": "Пользователь",
         "username": "Алек "
+    },
+    {
+        "password": "1111",
+        "userType": "Администратор",
+        "username": "admin"
+    },
+    {
+        "password": "1234",
+        "userType": "Пользователь",
+        "username": "user"
+    },
+    {
+        "password": "1456",
+        "userType": "Пользователь",
+        "username": "Леша "
     }
 ]
