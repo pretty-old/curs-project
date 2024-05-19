@@ -1,0 +1,16 @@
+[
+  {
+    "title": "1984",
+    "author": "Джордж Оруэлл",
+    "genre": "Антиутопия",
+    "yearPublished": 1949,
+    "available": true
+  },
+  {
+    "title": "Война и мир",
+    "author": "Лев Толстой",
+    "genre": "Роман",
+    "yearPublished": 1869,
+    "available": true
+  }
+]
