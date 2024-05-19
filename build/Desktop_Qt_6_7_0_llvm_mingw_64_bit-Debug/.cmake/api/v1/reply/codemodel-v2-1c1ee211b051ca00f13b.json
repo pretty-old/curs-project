@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-4c4390dc131ca86e2db6.json",
+					"jsonFile" : "directory-.-Debug-1306654ef27753421ffa.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "BiblSearch::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-BiblSearch-Debug-a10902727c4a5f2d773b.json",
+					"jsonFile" : "target-BiblSearch-Debug-b7fd42862e0c871c23b5.json",
 					"name" : "BiblSearch",
 					"projectIndex" : 0
 				},

@@ -25,7 +25,8 @@
 			"find_dependency",
 			"_qt_internal_find_qt_dependencies",
 			"set_property",
-			"_qt_internal_find_third_party_dependencies"
+			"_qt_internal_find_third_party_dependencies",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -79,13 +80,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 62,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 45,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
@@ -311,6 +312,12 @@
 				"file" : 15,
 				"line" : 61,
 				"parent" : 47
+			},
+			{
+				"command" : 13,
+				"file" : 1,
+				"line" : 40,
+				"parent" : 0
 			}
 		]
 	},
@@ -385,6 +392,10 @@
 					"path" : "C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/BiblSearch_autogen/include"
 				},
 				{
+					"backtrace" : 49,
+					"path" : "C:/Users/30823/Downloads/json-develop/json-develop/include"
+				},
+				{
 					"backtrace" : 14,
 					"isSystem" : true,
 					"path" : "C:/Qt/6.7.0/llvm-mingw_64/include/QtCore"
@@ -431,11 +442,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "BiblSearch_autogen::@6890427a1f51a3e7e1df"
+			"id" : "BiblSearch_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "BiblSearch_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "BiblSearch_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "BiblSearch::@6890427a1f51a3e7e1df",

@@ -4,6 +4,7 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/q23utility.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qarraydata.h \
@@ -117,6 +118,7 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtCore/qyieldcpu.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/QStandardItemModel \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qbrush.h \
@@ -136,6 +138,7 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qrgba64.h \
+  C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qstandarditemmodel.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.7.0/llvm-mingw_64/include/QtGui/qtguiglobal.h \
@@ -477,22 +480,6 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__exception/nested_exception.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__exception/operations.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__exception/terminate.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/copy_options.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/directory_entry.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/directory_iterator.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/directory_options.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/file_status.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/file_time_type.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/file_type.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/filesystem_error.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/operations.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/path.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/path_iterator.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/perm_options.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/perms.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/space_info.h \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__filesystem/u8path.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__format/buffer.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__format/concepts.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__format/enable_insertable.h \
@@ -851,12 +838,9 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__variant/monostate.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/__verbose_abort \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/algorithm \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/any \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/array \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/atomic \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/bit \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/bitset \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/cassert \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/cctype \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/cerrno \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/chrono \
@@ -878,14 +862,10 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/errno.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/exception \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/execution \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/filesystem \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/forward_list \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/functional \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/initializer_list \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/iomanip \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/ios \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/iosfwd \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/istream \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/iterator \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/limits \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/limits.h \
@@ -899,7 +879,6 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/new \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/numeric \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/optional \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/ostream \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/ratio \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/stdbool.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/stddef.h \
@@ -917,7 +896,6 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/typeinfo \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/unordered_map \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/utility \
-  C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/valarray \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/variant \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/vector \
   C:/Qt/Tools/llvm-mingw1706_64/include/c++/v1/version \
@@ -927,49 +905,4 @@ C:/Users/30823/Documents/BiblSearch/build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Deb
   C:/Qt/Tools/llvm-mingw1706_64/include/crtdefs.h \
   C:/Qt/Tools/llvm-mingw1706_64/include/sdks/_mingw_ddk.h \
   C:/Qt/Tools/llvm-mingw1706_64/lib/clang/17/include/stdarg.h \
-  C:/Qt/Tools/llvm-mingw1706_64/lib/clang/17/include/vadefs.h \
-  C:/Users/30823/Documents/BiblSearch/json.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/adl_serializer.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/byte_container_with_subtype.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/abi_macros.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/conversions/from_json.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/conversions/to_chars.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/conversions/to_json.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/exceptions.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/hash.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/input/binary_reader.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/input/input_adapters.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/input/json_sax.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/input/lexer.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/input/parser.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/input/position_t.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/iterators/internal_iterator.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/iterators/iter_impl.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/iterators/iteration_proxy.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/iterators/iterator_traits.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/iterators/primitive_iterator.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/json_custom_base_class.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/json_pointer.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/json_ref.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/macro_scope.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/macro_unscope.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/call_std/begin.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/call_std/end.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/cpp_future.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/detected.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/identity_tag.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/is_sax.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/std_fs.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/type_traits.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/meta/void_t.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/output/binary_writer.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/output/output_adapters.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/output/serializer.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/string_concat.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/string_escape.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/detail/value_t.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/json_fwd.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/ordered_map.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/thirdparty/hedley/hedley.hpp \
-  C:/Users/30823/Downloads/json-develop/json-develop/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+  C:/Qt/Tools/llvm-mingw1706_64/lib/clang/17/include/vadefs.h

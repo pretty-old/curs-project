@@ -35,7 +35,7 @@ else()
         )
     endif()
 endif()
-
+# Переместите эту строку ниже команды add_executable
 # Переместите эту строку ниже команды add_executable
 target_include_directories(BiblSearch PRIVATE C:\\Users\\30823\\Downloads\\json-develop\\json-develop\\include)
 
