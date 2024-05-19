@@ -39,7 +39,6 @@ MainWindow::MainWindow(QWidget *parent)
     // Добавляем layout в mainWindow
     QWidget *loginWidget = new QWidget;
     loginWidget->setLayout(loginLayout);
-    ui->verticalLayout->addWidget(loginWidget);
 
     // Устанавливаем начальное состояние элементов
     setElementsEnabled(false); // Все элементы не активны
