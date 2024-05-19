@@ -5,7 +5,7 @@
 #include <QJsonDocument>
 #include <QFile>
 #include <QMessageBox>
-#include <QJsonArray> // Добавить эту строку
+#include <QJsonArray>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -38,9 +38,17 @@ void MainWindow::on_addBookButton_clicked()
                 bool isOk;
                 int yearPublished = QInputDialog::getInt(this, "Добавить книгу", "Год издания:", 1900, 2024, 1, isOk); // Удалили &
                 if (isOk) {
-                    addBook(title, author, genre, yearPublished, true);
-                    saveBooks();
-                    updateBookView();
+                    // Проверяем, является ли пользователь администратором
+                    int userRow = ui->userTableView->currentIndex().row();
+                    if (userRow >= 0) {
+                        if (userModel->item(userRow, 2)->text() == "Администратор") {
+                            addBook(title, author, genre, yearPublished, true);
+                            saveBooks();
+                            updateBookView();
+                        } else {
+                            QMessageBox::warning(this, "Ошибка доступа", "У вас недостаточно прав для добавления книг.");
+                        }
+                    }
                 }
             }
         }
@@ -186,9 +194,9 @@ void MainWindow::loadBooks()
         QByteArray data = file.readAll();
         QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
         if (jsonDoc.isArray()) {
-            QJsonArray jsonArray = jsonDoc.array(); // Теперь работает
+            QJsonArray jsonArray = jsonDoc.array();
             bookModel->clear();
-            bookModel->setHorizontalHeaderLabels(QStringList() << "Название" << "Автор" << "Жанр" << "Год издания" << "Статус");
+            bookModel->setHorizontalHeaderLabels(QStringList() << "Название" << "Автор" << "Жанр" << "Год издания" << "Статус" << "Взял");
             for (int i = 0; i < jsonArray.size(); i++) {
                 QJsonObject bookObject = jsonArray.at(i).toObject();
                 QString title = bookObject.value("title").toString();
@@ -196,12 +204,14 @@ void MainWindow::loadBooks()
                 QString genre = bookObject.value("genre").toString();
                 int yearPublished = bookObject.value("yearPublished").toInt();
                 bool available = bookObject.value("available").toBool();
+                QString takenByUser = bookObject.value("takenByUser").toString();
                 QList<QStandardItem*> items;
                 items.append(new QStandardItem(title));
                 items.append(new QStandardItem(author));
                 items.append(new QStandardItem(genre));
                 items.append(new QStandardItem(QString::number(yearPublished)));
                 items.append(new QStandardItem(available ? "Доступна" : "Взята"));
+                items.append(new QStandardItem(takenByUser));
                 bookModel->appendRow(items);
             }
         }
@@ -216,7 +226,7 @@ void MainWindow::loadUsers()
         QByteArray data = file.readAll();
         QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
         if (jsonDoc.isArray()) {
-            QJsonArray jsonArray = jsonDoc.array(); // Теперь работает
+            QJsonArray jsonArray = jsonDoc.array();
             userModel->clear();
             userModel->setHorizontalHeaderLabels(QStringList() << "Имя пользователя" << "Пароль" << "Тип пользователя");
             for (int i = 0; i < jsonArray.size(); i++) {
@@ -239,7 +249,8 @@ void MainWindow::saveBooks()
 {
     QFile file("books.json");
     if (file.open(QIODevice::WriteOnly)) {
-        QJsonArray jsonArray; // Теперь работает
+        QJsonArray jsonArray;
+        // Исправляем ошибку: берем количество строк из модели, а не из jsonArray
         for (int i = 0; i < bookModel->rowCount(); i++) {
             QJsonObject bookObject;
             bookObject.insert("title", bookModel->item(i, 0)->text());
@@ -247,6 +258,7 @@ void MainWindow::saveBooks()
             bookObject.insert("genre", bookModel->item(i, 2)->text());
             bookObject.insert("yearPublished", bookModel->item(i, 3)->text().toInt());
             bookObject.insert("available", bookModel->item(i, 4)->text() == "Доступна");
+            bookObject.insert("takenByUser", bookModel->item(i, 5)->text());
             jsonArray.append(bookObject);
         }
         QJsonDocument jsonDoc(jsonArray);
@@ -259,7 +271,7 @@ void MainWindow::saveUsers()
 {
     QFile file("users.json");
     if (file.open(QIODevice::WriteOnly)) {
-        QJsonArray jsonArray; // Теперь работает
+        QJsonArray jsonArray;
         for (int i = 0; i < userModel->rowCount(); i++) {
             QJsonObject userObject;
             userObject.insert("username", userModel->item(i, 0)->text());
@@ -277,7 +289,7 @@ void MainWindow::updateBookView()
 {
     // Обновляем модель данных
     bookModel->clear();
-    bookModel->setHorizontalHeaderLabels(QStringList() << "Название" << "Автор" << "Жанр" << "Год издания" << "Статус");
+    bookModel->setHorizontalHeaderLabels(QStringList() << "Название" << "Автор" << "Жанр" << "Год издания" << "Статус" << "Взял");
     for (int i = 0; i < bookModel->rowCount(); i++) {
         QList<QStandardItem*> items;
         items.append(new QStandardItem(bookModel->item(i, 0)->text()));
@@ -285,6 +297,7 @@ void MainWindow::updateBookView()
         items.append(new QStandardItem(bookModel->item(i, 2)->text()));
         items.append(new QStandardItem(QString::number(bookModel->item(i, 3)->text().toInt())));
         items.append(new QStandardItem(bookModel->item(i, 4)->text() == "Доступна" ? "Доступна" : "Взята"));
+        items.append(new QStandardItem(bookModel->item(i, 5)->text()));
         bookModel->appendRow(items);
     }
     // Обновляем представление
@@ -317,6 +330,7 @@ void MainWindow::addBook(const QString &title, const QString &author, const QStr
     items.append(new QStandardItem(genre));
     items.append(new QStandardItem(QString::number(yearPublished)));
     items.append(new QStandardItem(available ? "Доступна" : "Взята"));
+    items.append(new QStandardItem("")); // takenByUser по умолчанию пустое
     bookModel->appendRow(items);
 }
 
@@ -327,6 +341,7 @@ void MainWindow::editBook(int row, const QString &title, const QString &author, 
     bookModel->setItem(row, 2, new QStandardItem(genre));
     bookModel->setItem(row, 3, new QStandardItem(QString::number(yearPublished)));
     bookModel->setItem(row, 4, new QStandardItem(available ? "Доступна" : "Взята"));
+    // Не трогаем takenByUser, так как при редактировании книга не меняет владельца
 }
 
 void MainWindow::deleteBook(int row)
@@ -357,12 +372,15 @@ void MainWindow::deleteUser(int row)
 
 void MainWindow::issueBook(int userRow, int bookRow)
 {
+    QString username = userModel->item(userRow, 0)->text(); // Получаем имя пользователя
     bookModel->setItem(bookRow, 4, new QStandardItem("Взята"));
+    bookModel->setItem(bookRow, 5, new QStandardItem(username)); // Устанавливаем takenByUser
 }
 
 void MainWindow::returnBook(int userRow, int bookRow)
 {
     bookModel->setItem(bookRow, 4, new QStandardItem("Доступна"));
+    bookModel->setItem(bookRow, 5, new QStandardItem("")); // Очищаем takenByUser
 }
 
 void MainWindow::generateReport()

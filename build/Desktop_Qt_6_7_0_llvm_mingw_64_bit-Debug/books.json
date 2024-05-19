@@ -1,16 +1,16 @@
 [
-    {
-        "author": "Джордж Оруэлл",
-        "available": false,
-        "genre": "Антиутопия",
-        "title": "1984",
-        "yearPublished": 1949
-    },
-    {
-        "author": "Лев Толстой",
-        "available": false,
-        "genre": "Роман",
-        "title": "Война и мир",
-        "yearPublished": 1869
-    }
+  {
+    "title": "1984",
+    "author": "Джордж Оруэлл",
+    "genre": "Антиутопия",
+    "yearPublished": 1949,
+    "available": false,
+  },
+  {
+    "title": "Война и мир",
+    "author": "Лев Толстой",
+    "genre": "Роман",
+    "yearPublished": 1869,
+    "available": true,
+  }
 ]
